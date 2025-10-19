@@ -178,8 +178,8 @@ class Game:
                         enemy[1] += healthOut
 
                 sleep(0.5)
-                print(f"Your stats: \nHealth: {self.player.getHealth} \nAttack: {self.player.getAttack()} \nDefense: {self.player.getDefense()}")
-                print(f"Enemy stats: \aHealth: {enemy[1]} \nAttack: {enemy[2]}")
+                print(f"\n\nYour stats: \nHealth: {self.player.getHealth()} \nAttack: {self.player.getAttack()} \nDefense: {self.player.getDefense()}")
+                print(f"Enemy stats: \aHealth: {enemy[1]} \nAttack: {enemy[2]}\n\n")
                 sleep(0.6)
                 
 
@@ -187,7 +187,7 @@ class Game:
             self.chooseBuff()
 
         print(f"You have beat level {self.level}. Proceeding to next level. ")
-        sleep(0.8   )
+        sleep(0.8)
         self.level += 1
 
 
