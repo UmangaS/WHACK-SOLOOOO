@@ -1,4 +1,5 @@
 import random
+from time import sleep
 
 class Player:
     def __init__(self):
@@ -47,6 +48,7 @@ class Game:
         print("Start your adventure.")
         self.player = Player()
         print(f"You have been assigned the deadley weapon - {self.player.weapon}")
+        sleep(0.2)
         self.playTurn()
 
 
@@ -65,7 +67,7 @@ class Game:
         else:
             print(f"Your defense has been increased by {amount}. ")
             self.player.setDefense(amount)
-
+        sleep(0.3)
         
 
 
@@ -80,6 +82,7 @@ class Game:
             self.player.setAttack(amount)
         else:
             self.player.setDefense(amount)
+        sleep(0.3)
 
 
 
@@ -90,6 +93,7 @@ class Game:
         # continue game 
         enemy = random.choice(self.enemies)
         print(f"You have encountered a {enemy[0]}. It has {enemy[1]} health and {enemy[2]} attack. ")
+        sleep(0.1)
         while enemy[1] >= 1:
             move = str(input("What is your move? \n1) Attack \n2)Block \n3)Recover")).title()
             if not (move in self.moves or move in ["1", "2", "3"]):
@@ -173,16 +177,17 @@ class Game:
                         self.player.getHealth(healthIn)
                         enemy[1] += healthOut
 
-
+                sleep(0.2)
                 print(f"Your stats: \nHealth: {self.player.getHealth} \nAttack: {self.player.getAttack()} \nDefense: {self.player.getDefense()}")
                 print(f"Enemy stats: \aHealth: {enemy[1]} \nAttack: {enemy[2]}")
-
+                sleep(0.3)
                 
 
         if success > loss:
             self.chooseBuff()
 
         print(f"You have beat level {self.level}. Proceeding to next level. ")
+        sleep(0.4)
         self.level += 1
 
 
